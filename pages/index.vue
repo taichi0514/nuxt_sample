@@ -1,50 +1,61 @@
 <template>
-  <sample-component title="title"/>
+  <div>
+    <template>
+      <nuxt-link to="/about">about</nuxt-link>
+    </template>
+    <sample-component :title="titledd">
+      <div class="come">
+        slot examole
+      </div>
+      <div slot="named">あほ</div>
+    </sample-component>
+  </div>
 </template>
 
 <script>
-  import SampleComponent from '~/components/SampleComponent.vue'
+import SampleComponent from '~/components/SampleComponent.vue'
 
-  export default {
-    components: {
-      SampleComponent
-    },
-    data() {
-      return {
-        title: 'nuxt.js data'
-      }
+export default {
+  components: {
+    SampleComponent
+  },
+  data() {
+    return {
+      title: 'nuxt.js data',
+      titledd: 'いひひ'
     }
   }
+}
 </script>
 
 <style>
-  .container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-  .title {
-    font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+.title {
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    display: block;
-    font-weight: 300;
-    font-size: 100px;
-    color: #35495e;
-    letter-spacing: 1px;
-  }
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: #35495e;
+  letter-spacing: 1px;
+}
 
-  .subtitle {
-    font-weight: 300;
-    font-size: 42px;
-    color: #526488;
-    word-spacing: 5px;
-    padding-bottom: 15px;
-  }
+.subtitle {
+  font-weight: 300;
+  font-size: 42px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+}
 
-  .links {
-    padding-top: 15px;
-  }
+.links {
+  padding-top: 15px;
+}
 </style>
